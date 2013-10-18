@@ -14,6 +14,7 @@ class MoviesController < ApplicationController
     else
       ratings_to_show = params[:ratings].keys
     end
+    @ratings_checker = Movie.ratings_checker(ratings_to_show)
 
     @movies = Movie.order(params[:sort]).find(:all, :conditions => {:rating => ratings_to_show})
   end

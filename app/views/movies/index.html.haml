@@ -8,7 +8,7 @@
         Include: 
         - @all_ratings.each do |rating|
           = rating
-          = check_box_tag "ratings[#{rating}]"
+          = check_box_tag "ratings[#{rating}]", 1, @ratings_checker[rating]
         = submit_tag 'Refresh', id: 'ratings_submit' 
     %tr
       %th{:class => ("hilite" if params[:sort] == 'title')}
