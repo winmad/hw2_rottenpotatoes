@@ -9,6 +9,8 @@ class MoviesController < ApplicationController
   def index
     redirect = false
 
+    #debugger
+
     if params[:sort] == nil
       if session[:sort] == nil
         session[:sort] = :no_sort
@@ -37,7 +39,7 @@ class MoviesController < ApplicationController
       redirect_to movies_path({ :sort => session[:sort], :ratings => session[:ratings] })
     end
 
-    if sort == ["no_sort"]
+    if (sort == ["no_sort"]) || (sort == [:no_sort]) || (sort == "no_sort")
       sort = []
     end
 
