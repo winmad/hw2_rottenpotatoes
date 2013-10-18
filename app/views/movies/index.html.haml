@@ -9,7 +9,7 @@
         - @all_ratings.each do |rating|
           = rating
           = check_box_tag "ratings[#{rating}]"
-        = submit_tag 'Refresh' id: 'ratings_submit' 
+        = submit_tag 'Refresh', id: 'ratings_submit' 
     %tr
       %th{:class => ("hilite" if params[:sort] == 'title')}
         = link_to 'Movie Title', movies_path(params.merge(:sort => 'title')), id: 'title_header'
